@@ -60,3 +60,24 @@ Clever, isn't it?
 The problem could occur if we remove package1 and package2 and then we actually don't use dep1 at all... we can correct this issue _pruning_ the installed packages with `npm prune`
 
 Finding outdated packages is actually easy with `npm outdated` but upgrading the package is not as easy with `npm upgrade` because we manually have to update the package description file (which contain info about our current dependencies).
+
+## Configuration and stuff
+
+Simple, `npm configuration list` show the configuration and `npm configuration edit` helps you to configure. Is this global? nope, you can see the global with `npm configuration list -g`
+
+Do you want to edit the config? no problem, when issuing edit it will open vi,or vim, you can change that with `npm config set editor vim`, and that is in fact a good example of setting keys:
+
+    npm config [command] [key] [value]
+
+Where, of course, to remove you don't have to pass a value and just issue the remove command.
+
+Every package has his metadata defined in a file named package.json and the package structure was not clear to me at the beginning but I found this gem [an interactive guide to package.json](http://browsenpm.org/package.json) which explain every of the nodes for the package metadata file.
+
+Versioning of packages should be done using [SemVer](http://semver.org) (I fucking love semantic versioning).
+
+Interestingly, we have two types of dependencies in packages:
+
+ * normal dependencies: are installed all the time and required
+ * dev dependencies: are installed for development and skipped if `NODE_ENV=production`
+
+# Now it's time for Grunt!
