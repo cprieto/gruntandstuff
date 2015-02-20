@@ -81,3 +81,24 @@ Interestingly, we have two types of dependencies in packages:
  * dev dependencies: are installed for development and skipped if `NODE_ENV=production`
 
 # Now it's time for Grunt!
+
+Grunt is one of the task runners for javascript (the other is Gulp which I will take a look later).
+
+Grunt needs a root package.json file (which is the descriptor of the project) and this make sense so when we publish our stuff we don't need to include our modules.
+
+A simple way to handle this is using `npm init` and by default it will look for all the already installed packages and include them as dependencies.
+
+If you start from scratch, generate a package.json from nothing (which will declare no dependencies) and then install grunt (for example) it won't enumerate itself as a dependency, to do this you have to explicitly specify it with `-save` so I had to:
+
+    npm init                  # and answer all the stuff
+    npm install grunt --save  # or well, --save-dev as grunt should be
+
+Just be careful with this, because the same happens with uninstall. Uninstall _removes the package from the node modules directory_ but not from the dependencies. So, to remove grunt correctly it should be:
+
+    npm uninstall grunt --save-dev
+
+I found this [post](http://www.wolfe.id.au/2014/02/01/getting-a-new-node-project-started-with-npm/) good explaining it.
+
+
+
+
