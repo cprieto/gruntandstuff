@@ -99,6 +99,14 @@ Just be careful with this, because the same happens with uninstall. Uninstall _r
 
 I found this [post](http://www.wolfe.id.au/2014/02/01/getting-a-new-node-project-started-with-npm/) good explaining it.
 
+Well, the [getting started](http://gruntjs.com/getting-started) part of the Grunt website was not very helpful, so I moved to another [promising webpage](http://24ways.org/2013/grunt-is-not-weird-and-hard/)
 
+We can easily map this to our known msbuild. We load the required tasks and we have configuration needed to do it. Take a look at the Gruntfile.
+
+Another nice thing is that the Gruntfile can be written in coffee-script and I like that (even when I can't remember at all the last time I wrote Coffee-script but I remember I liked it).
+
+One intersting thing is that the grunt command line is not installed with the _grunt package_ but you have to install it separately and globally (with our friend `npm install grunt-cli -g` and of course this is not needed even as a dev dependency).
+
+Well, continuing the tutorial everything was nice!
 
 
