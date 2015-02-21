@@ -5,14 +5,14 @@ module.exports = function(grunt) {
 		concat: {
 			dist: {
 				src: ['index.js', 'another.js'],
-				dest: 'build.js'
+				dest: 'output/build.js'
 			}
 		},
 
 		uglify: {
 			build: {
-				src: 'build.js',
-				dest: 'build.min.js'
+				src: 'output/build.js',
+				dest: 'output/build.min.js'
 			}
 		}
 	});
