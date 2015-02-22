@@ -32,16 +32,27 @@ module.exports = function(grunt) {
 					src: ['**/*.JPG']
 				}]
 			}
-		}
+		},
+
+		sanitize: {
+			files: {
+				src: ['output/*']
+			}
+		},
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
+	grunt.loadNpmTasks('grunt-sanitize');
 
-	//grunt.registerTask('default', ['concat', 'uglify', 'imagemin']);
+	grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'sanitize']);
 
-	grunt.registerTask('default', 'Sample description', function() {
-		console.log('oh hai!');	
-	})
+	grunt.registerTask('hello', 'Sample hello task', function(name) {
+		if (!name || !name.length) {
+			grunt.fatal("You need to provide a name!");
+		}
+
+		grunt.log.write('oh hai ' + name);
+	});
 }
