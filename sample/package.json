@@ -13,6 +13,7 @@
     "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-imagemin": "^0.9.3",
     "grunt-sanitize": "^0.1.2",
-    "imagemin-mozjpeg": "^4.0.0"
+    "imagemin-mozjpeg": "^4.0.0",
+    "load-grunt-tasks": "^3.1.0"
   }
 }
