@@ -41,13 +41,8 @@ module.exports = function(grunt) {
 		},
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
-	grunt.loadNpmTasks('grunt-sanitize');
-
+	require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
 	grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'sanitize']);
-
 	grunt.registerTask('hello', 'Sample hello task', function(name) {
 		if (!name || !name.length) {
 			grunt.fatal("You need to provide a name!");
